@@ -9,3 +9,7 @@ exports.postSensor = async (local, tipo, valor) => {
 exports.getAllSensores = async () => {
     return await Sensor.find({}, '-__v')
 }
+
+exports.getSensorById = async (id) => {
+    return await Sensor.findOne({ id: id }, '-__v')
+}
