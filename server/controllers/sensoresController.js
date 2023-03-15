@@ -39,9 +39,9 @@ exports.getAllSensores = async (req, res, next) => {
 }
 
 exports.getSensorById = async (req, res, next) => {
-    const { sensorId } = req.params
+    const { id } = req.params
 
-    const response = await sensorService.getSensorById(sensorId)
+    const response = await sensorService.getSensorById(id)
 
     if (response.type == "Success"){
         res.status(response.status).json({
