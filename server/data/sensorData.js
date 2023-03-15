@@ -5,3 +5,7 @@ exports.postSensor = async (local, tipo, valor) => {
 
     return await sensor.save()
 }
+
+exports.getAllSensores = async () => {
+    return await Sensor.find({}, '-__v')
+}

@@ -19,3 +19,21 @@ exports.postSensor = async (req, res, next) => {
         }) 
     }
 }
+
+exports.getAllSensores = async (req, res, next) => {
+    const response = await sensorService.getAllSensores()
+
+    if (response.type == "Success"){
+        res.status(response.status).json({
+            status: response.status,
+            msg: 'ok',
+            data: response.data
+        })
+    } else { 
+        res.status(response.status).json({
+            status: response.status,
+            msg: 'erro',
+            erro: response.message
+        }) 
+    }
+}

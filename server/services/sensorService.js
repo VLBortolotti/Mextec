@@ -23,3 +23,12 @@ exports.postSensor = async (local, tipo, valor) => {
     }
 
 }
+
+exports.getAllSensores = async () => {
+    try {   
+        const response = await sensorData.getAllSensores()
+        return new ResponseDTO('Success', 200, 'ok', response)
+    } catch (error) {
+        return new ResponseDTO('Erro', 500, 'Erro no servidor')
+    }
+}

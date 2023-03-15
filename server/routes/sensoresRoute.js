@@ -4,4 +4,6 @@ const sensoresController = require('../controllers/sensoresController')
 
 router.post('/', sensoresController.postSensor)
 
+router.get('/', sensoresController.getAllSensores)
+
 module.exports = router
