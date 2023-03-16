@@ -2,8 +2,8 @@ const Sensor = require('../models/SensorModel')
 
 exports.postSensor = async (local, tipo, valor) => {
     const sensor = new Sensor() // {local, tipo, valor}
-    sensor.metaData['local'] = local
-    sensor.tipo = tipo
+    sensor.metadata['local'] = local
+    sensor.metadata['tipo'] = tipo
     sensor.valor = valor
 
     return await sensor.save()

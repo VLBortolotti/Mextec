@@ -1,9 +1,11 @@
 const sensorService = require('../services/sensorService')
 
 exports.postSensor = async (req, res, next) => {
-    const { metaData, tipo, valor } = req.body
-    const local = metaData.local
+    const { metadata, valor } = req.body
+    const local = metadata.local
+    const tipo = metadata.tipo
     console.log(local)
+    console.log(tipo)
 
     const response = await sensorService.postSensor(local, tipo, valor)
 

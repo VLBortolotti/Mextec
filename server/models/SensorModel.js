@@ -2,35 +2,35 @@ const mongoose = require('mongoose')
 const database = require('../infra/database')
 
 const sensorSchema = mongoose.Schema(
-    {
-        tipo: {
+    { 
+        valor: {
             type: String,
             required: true
-        },
-        valor: {
-            type: Number,
-            required: true
-        },
-        data: {
+        }, 
+        timestamp: {
             type: Date,
-            required: true,
-            default: Date.now()
+            default: Date.now() 
         },
-        metaData: {
+        metadata: {
             local: {
                 type: String,
                 required: true
+            },
+            tipo: {
+                type: String,
+                required: true
             }
-        }  
-    },
+        } 
+    }, 
     {
         timeseries: {
-            timeField: "date", 
-            metaField: "metaData",
-            granularity: "minutes"
+          timeField: 'timestamp',
+          metaField: 'metadata',
+          granularity: 'seconds'
         },
-        expireAfterSeconds: 10
+        autoCreate: false,
+        expireAfterSeconds: 15
     }
-)
+);
 
 module.exports = mongoose.model('Sensor', sensorSchema)
