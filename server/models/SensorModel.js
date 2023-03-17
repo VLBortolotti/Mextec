@@ -29,7 +29,7 @@ const sensorSchema = mongoose.Schema(
           granularity: 'seconds'
         },
         autoCreate: false,
-        expireAfterSeconds: 15
+        expireAfterSeconds: 948000
     }
 );
 
