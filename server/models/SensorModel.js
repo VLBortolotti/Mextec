@@ -3,7 +3,7 @@ const database = require('../infra/database')
 
 const sensorSchema = mongoose.Schema(
     { 
-        valor: {
+        valor_estado: {
             type: String,
             required: true
         }, 
@@ -12,7 +12,15 @@ const sensorSchema = mongoose.Schema(
             default: Date.now() 
         },
         metadata: {
-            local: {
+            id_transportadora: {
+                type: Schema.Types.ObjectId,
+                required: true
+            },
+            latitude: {
+                type: String,
+                required: true
+            },
+            longitude: {
                 type: String,
                 required: true
             },
@@ -29,7 +37,7 @@ const sensorSchema = mongoose.Schema(
           granularity: 'seconds'
         },
         autoCreate: false,
-        expireAfterSeconds: 948000
+        expireAfterSeconds: 3600 // uma hora
     }
 );
 
