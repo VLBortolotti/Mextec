@@ -12,11 +12,11 @@ const relatorioSchema = mongoose.Schema(
             default: Date.now()
         },
         id_sensor: {
-            type: Schema.Types.ObjectId,
+            type: [Schema.Types.ObjectId],
             required: true
         },
         id_transportadora: {
-            type: Schema.Types.ObjectId,
+            type: [Schema.Types.ObjectId],
             required: true
         }
     }

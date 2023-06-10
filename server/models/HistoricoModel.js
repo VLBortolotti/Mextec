@@ -4,11 +4,11 @@ const database = require('../infra/database')
 const historicoSchema = mongoose.Schema(
     { 
         id_sensor: {
-            type: Schema.Types.ObjectId,
+            type: [Schema.Types.ObjectId],
             required: true 
         },
         valor_estado_antigo: {
-            type: String,
+            type: [String],
             required: true
         },
         data: {
